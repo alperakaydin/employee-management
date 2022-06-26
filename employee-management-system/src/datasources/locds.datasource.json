@@ -1,0 +1,26 @@
+{
+  "name": "locds",
+  "connector": "rest",
+  "baseURL": "http://www.locationbox.com.tr/locationbox/services?",
+  "crud": false,
+  "options": {
+    "headers": {
+      "accept": "application/json",
+      "content-type": "application/json"
+    }
+  },
+  "operations": [
+    {
+      "template": {
+        "method": "GET",
+        "url": "http://www.locationbox.com.tr/locationbox/services?Key=1730000201000120004700080902020X40741090080050210002069&Cmd=Geocode&Typ=JSON&Latitude={latitude}&Longitude={longtitude}"
+      },
+      "functions": {
+        "getLocation": [
+          "longtitude",
+          "latitude"
+        ]
+      }
+    }
+  ]
+}
