@@ -1,3 +1,83 @@
+
+Department:(PK: name)
+{
+    "name": "string",
+    "manager": "string",
+    "location": "string",
+}
+
+    http://localhost:3000/departments 
+   GET, POST
+	
+    http://localhost:3000/departments/{id}
+GET, POST, PATCH, PUT, DELETE
+
+    http://localhost:3000/departments-avarage-salary{id}
+  -Id si verilen departmanın maaş ortalamasını hesaplar
+  GET
+
+    http://localhost:3000/departmentsAllEmployee
+  -Tüm çalışanları departmanlara göre hiyerarşik listeler 
+  GET
+
+	http://localhost:3000/departments/{id}/employees
+  -Id si verilen departmanın çalışanlarını listeler
+	GET, POST, PATCH, DELETE
+
+
+
+Employee:(PK: id)
+{
+    "id": true,
+    "name": true,
+    "lastName": true,
+    "email": true,
+    "phone": true,
+    "startDate": true,
+    "salary": true,
+    "department": true,
+    "title": true,
+    "manager": true
+}
+
+	http://localhost:3000/employees
+  GET, POST, PATCH
+
+	http://localhost:3000/employees/{id}
+  GET, POST, PATCH, PUT, DELETE
+
+	http://localhost:3000/employees/{id}/title-histories
+  -Id si verilen çalışanın ünvan bilgilerini tarih bazında listeler
+	GET, POST, PATCH, DELETE
+
+	http://localhost:3000/employees-change-title/{id}/{title}
+  -Id si verilen çalışanın ünvanını değiştirir ve ünvan tarihçesine kaydeder
+  GET
+
+
+Location:(PK:name)
+{
+  "name": "string",
+  "address": "string",
+  "postalCode": 0,
+  "city": "string",
+  "country": "string"
+}
+
+	http://localhost:3000/locations
+  GET, POST, PATCH
+
+	http://localhost:3000/locations/{id}
+  GET, POST, PATCH, PUT, DELETE
+
+	http://localhost:3000/locations/{id}/departments
+  -Lokasyonda bulunan departmanları listeler
+	GET, POST, PATCH, DELETE
+
+
+
+
+
 # employee-management-system
 
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
